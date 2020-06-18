@@ -9,7 +9,9 @@ import {Client} from "../model/client/client";
 export class NewClientComponent implements OnInit {
 
   cafs = ['CAF1', 'CAF2' , 'CAF3'];
-
+  birthdate:Date = new Date();
+  min: Date = new Date(1930, 1, 1)
+  max: Date = new Date(1980,12,31)
 
   constructor() { }
 

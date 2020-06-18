@@ -11,14 +11,12 @@
       <input type="text" class="form-control" id="prenom">
     </div>
 
-    <div class="form-group">
-      <label for="prenom">birthday</label>
-      <input type="text" class="form-control" id="prenom">
-    </div>
+
+    <kendo-calendar [(value)]="birthdate" [min]="min" [max]="max"></kendo-calendar>
 
     <div class="form-group">
-      <label for="prenom">Prenom</label>
-      <input type="text" class="form-control" id="prenom">
+      <label for="prenom">Telephone</label>
+      <input type="tel" class="form-control" id="telephone">
     </div>
 
     <div class="form-group">
@@ -32,8 +30,21 @@
         <option *ngFor="let caf of cafs" [value]="caf">{{caf}}</option>
       </select>
     </div>
+    <div class="form-group">
+      <label>Droit a l'image: </label>
+      <div class="form-group">
+      <label class="firstLabel">
+        <input type="radio" name="droitImg" formControlName="payedOvertime" [value]="true" />Oui
+      </label>
+      <label >
+        <input type="radio" name="droitImg" formControlName="payedOvertime" [value]="false" />Non
+      </label>
+      </div>
+    </div>
 
-    <button type="submit" class="btn btn-success">Submit</button>
+
+    <button type="submit" class="btn btn-success">Créer</button>
+
 
   </form>
 </div>
