@@ -9,6 +9,10 @@ import { NewClientComponent } from './new-client/new-client.component';
 import { NewIntervenantComponent } from './new-intervenant/new-intervenant.component';
 import { NewEmployeeComponent } from './new-employee/new-employee.component';
 import { SimulatorComponent } from './simulator/simulator.component';
+import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 const routes: Routes = [
 
@@ -26,7 +30,9 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    DateInputsModule,
+    BrowserAnimationsModule
   ],
   exports:[RouterModule],
   providers: [],

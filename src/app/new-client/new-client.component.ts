@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Client} from "../model/client/client";
 
 @Component({
   selector: 'app-new-client',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./new-client.component.css']
 })
 export class NewClientComponent implements OnInit {
+
+  cafs = ['CAF1', 'CAF2' , 'CAF3'];
+
 
   constructor() { }
 
