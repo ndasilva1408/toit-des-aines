@@ -1,98 +1,90 @@
 .container {
   max-width: 960px;
 }
-.navbar-survival101 {
-  background-color:#8e7674;
-  background-image: url("bankimg/TestTDA.png");
-  height: 25em;
-  background-repeat: no-repeat;
-  background-position: center;
 
-
-}
-/* .navbar-survival101 .navbar-brand {
-  margin-right: 2.15rem;
-  padding: 3px 0 0 0;
-  line-height: 36px;
-} */
-
-.navbar-survival101 .navbar-brand img {
-  vertical-align: baseline;
+h1 {
+  color: #d20034;
 }
 
-.navbar-expand-lg .navbar-nav .nav-link {
+h2 {
+  color: #b49c76;
+}
+
+h3 {
+  color: #f9990f
+}
+
+/* Header */
+#head {
+  background: #181015 url(../assets/bankimg/TestTDA.png) no-repeat;
+  background-size: cover;
+  min-height: 520px;
+  text-align: center;
+  padding-top: 240px;
+  color: white;
+  font-family: "Open sans", Helvetica, Arial;
+  font-weight: 300;
+}
+
+#head.secondary {
+  height: 100px;
+  min-height: 100px;
+  padding-top: 0px;
+}
+
+#head .lead {
+  font-family: "Open sans", Helvetica, Arial;
+  font-size: 44px;
+  margin-bottom: 6px;
+  margin-left: 10%;
+  line-height: 1.15em;
+  text-align: center
+}
+
+#head .tagline {
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 25px;
+}
+
+#head .tagline a {
   color: #fff;
 }
 
-.search-box {
-  position: relative;
-  height: 34px;
-}
-.search-box input {
-  border: 0;
-  border-radius: 3px !important;
-  padding-right: 28px;
-  font-size: 15px;
+#head .btn {
+  margin-bottom: 10px;
 }
 
-.search-box .input-group-btn {
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 999;
+#head .btn-default {
+  text-shadow: none;
+  background: transparent;
+  color: #5a3d3e;
+  -webkit-box-shadow: inset 0px 0px 0px 3px rgba(90, 61, 62, .5);
+  -moz-box-shadow: inset 0px 0px 0px 3px rgba(90, 61, 62, .5);
+  box-shadow: inset 0px 0px 0px 3px rgba(90, 61, 62, .5);
 }
 
-.search-box .input-group-btn button {
-  background-color: transparent;
-  border: 0;
-  padding: 4px 8px;
-  color: rgba(0,0,0,.4);
-  font-size: 20px;
+#head .btn-default:hover,
+#head .btn-default:focus {
+  color: rgba(255, 255, 255, .8);
+  -webkit-box-shadow: inset 0px 0px 0px 3px rgba(255, 255, 255, .8);
+  -moz-box-shadow: inset 0px 0px 0px 3px rgba(255, 255, 255, .8);
+  box-shadow: inset 0px 0px 0px 3px rgba(255, 255, 255, .8);
+  background: transparent;
 }
 
-.search-box .input-group-btn button:hover,
-.search-box .input-group-btn button:active,
-.search-box .input-group-btn button:focus {
-  color: rgba(0,0,0,.4);
+#head .btn-default:active,
+#head .btn-default.active {
+  color: #fff;
+  -webkit-box-shadow: inset 0px 0px 0px 3px #fff;
+  -moz-box-shadow: inset 0px 0px 0px 3px #fff;
+  box-shadow: inset 0px 0px 0px 3px #fff;
+  background: transparent;
+}
+#head .btn-lg{
+  margin-right: 30px;
 }
 
-@media (min-width: 992px) {
-  .navbar-expand-lg .navbar-nav .nav-link {
-    padding-right: .7rem;
-    padding-left: .7rem;
-  }
-
-  .search-box {
-    width: 300px !important;
-  }
-}
-
-.caroulsel {
-  width: 100%;
-  overflow: hidden;
-  padding: 5px 0 5px 5px;
-  align-items: flex-end;
-}
-
-.caroulsel-wrap {
-  white-space: nowrap;
-  font-size: 0;
-}
-
-.caroulsel-wrap a {
-  display: inline-block;
-  width: 105px;
-  height: 91px;
-  border: #ccc 1px solid;
-
-}
-.elem-oppl {
-  background-image: url("bankimg/Logo OPPL.png");
 
 
-}
-.elem-telus {
-  background-image: url("bankimg/Logo Tel.png");
-}
 
 

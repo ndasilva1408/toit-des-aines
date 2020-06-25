@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {APP_INITIALIZER, NgModule} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,12 +11,20 @@ import { NewEmployeeComponent } from './new-employee/new-employee.component';
 import { SimulatorComponent } from './simulator/simulator.component';
 import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomeComponent } from './home/home.component';
+import { ImageUploadComponent } from './image-upload/image-upload.component';
+import {KeycloakSecurityService} from "./security/keycloak-security.service";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 
 
 
 const routes: Routes = [
 
 ];
+
+export function kcFactory(kcSecurity:KeycloakSecurityService) {
+  return () => kcSecurity.init();
+}
 
 @NgModule({
   declarations: [
@@ -25,17 +33,22 @@ const routes: Routes = [
     NewClientComponent,
     NewIntervenantComponent,
     NewEmployeeComponent,
-    SimulatorComponent
+    SimulatorComponent,
+    HomeComponent,
+    ImageUploadComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     RouterModule,
     DateInputsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   exports:[RouterModule],
-  providers: [],
+  providers: [
+    {provide:APP_INITIALIZER, deps:[KeycloakSecurityService],useFactory:kcFactory , multi:true},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
