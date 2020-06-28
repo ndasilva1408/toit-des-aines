@@ -1,35 +1,79 @@
+<br>
 <div class="container">
-  <h1>Simulateur d'aide</h1>
-
-  <h2> La valeur donnez a la suite de la  blablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablabla</h2>
-
-
-
-  <form>
-    <p>Choix GIR</p>
-  <ul class="radiot-GIR">
-    <li>
-      <input type="radio">
-    </li>
-
-  </ul>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="well-block">
+        <div class="well-title">
 
 
-    <div class="form-group">
-      <label>Vivez vous seul? </label>
-      <div class="form-group">
-        <label class="firstLabel">
-          <input type="radio" name="droitImg" formControlName="payedOvertime" [value]="true" />Oui
-        </label>
-        <label >
-          <input type="radio" name="droitImg" formControlName="payedOvertime" [value]="false" />Non
-        </label>
+          <div class="card">
+            <div class="card-header" style="text-align: center"><h3>Simulation :</h3></div>
+          </div>
+
+          <div class="card-body">
+            <form #f="ngForm" [formGroup]="forms" (ngSubmit)="calcul()">
+              <br>
+
+
+              <div class="form-group">
+                <div class="text-center">
+                  <label for="GIR">Veuillez indiquer votre <b>GIR</b></label>
+                </div>
+
+                <div class="row justify-content-md-center">
+                  <select [value]="GIR" multiple class="form-control col-md-3" id="GIR">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                  </select>
+                </div>
+              </div>
+
+
+              <div class="form-check">
+                <div class="text-center">
+                <p>Sources de revenus:</p>
+                </div>
+                <input class="form-check-input col-md-3" type="checkbox"  formControlName="isAlone" [value]="false" id="defaultCheck1">
+                <label class="form-check-label col-md-3" for="defaultCheck1">
+                  Célibataire
+                </label>
+                <input class="form-check-input col-md-3" type="checkbox"  formControlName="isAlone" [value]="true" id="defaultCheck">
+                <label class="form-check-label col-md-3" for="defaultCheck">
+                  Couple
+                </label>
+              </div>
+
+              <div class="col-md-3">
+                <div class="form-group">
+
+                  <label class="control-label">Revenus mensuels</label>
+                  <input class="form-control"
+                         type="number"
+                         name="revenu"
+                         formControlName="revenu"
+                         required minlength="2">
+                </div>
+              </div>
+              <br>
+              <div class="col-md-12" align="right">
+                <div class="form-group">
+                  <button
+                    type="submit"
+                    class="btn btn-primary" [disabled]="forms.invalid">Valider
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
+
     </div>
-
-
-    <button type="submit" class="btn btn-success">Testez</button>
-
-
-  </form>
+  </div>
 </div>
+
+

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-simulator',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./simulator.component.css']
 })
 export class SimulatorComponent implements OnInit {
+  forms: FormGroup;
+  isAlone : boolean;
 
   constructor() { }
-
+  GIR : number;
   ngOnInit() {
   }
 
+  calcul() {
+
+  }
 }

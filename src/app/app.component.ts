@@ -11,7 +11,27 @@ export class AppComponent implements OnInit{
 
  constructor(public kcService:KeycloakSecurityService) {
  }
+ isAuth = false;
+ keycloak:any;
+ userInformations:any;
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.keycloak=this.kcService.kc;
+    this.isAuth=this.keycloak.authenticated;
+    this.userInformations = this.isAuth ? this.keycloak.idTokenParsed : {};
   }
+  onLogin() {
+    this.keycloak.login();
+  }
+  onLogout() {
+    this.keycloak.logout();
+  }
+  ManagedAccount() {
+    this.keycloak.accountManagement();
+  }
+  isAppManager() {
+    return this.keycloak.hasRealmRole('tda-manager');
+  }
+
+
 }

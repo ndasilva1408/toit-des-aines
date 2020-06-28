@@ -2,25 +2,12 @@
 <div class="navbar navbar-inverse navbar-fixed-top headroom" >
   <div class="container">
     <div class="navbar-header">
-      <!-- Button for smallest screens -->
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"  *ngIf="!this.isAuth"><span class="icon-bar"><a class="nav-link" (click)="onLogin()">Login</a></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"  *ngIf="this.isAuth"><span class="icon-bar"><a class="nav-link" (click)="onLogout()">Logout</a></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+
       <a class="navbar-brand" href="index.html" routerLink="home"><img src="../../assets/bankimg/LogoTDA.png" alt="Logo"></a>
     </div>
-    <div class="navbar-collapse collapse">
-      <ul class="nav navbar-nav pull-right">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="sidebar-left.html">Left Sidebar</a></li>
-            <li class="active"><a href="sidebar-right.html">Right Sidebar</a></li>
-          </ul>
-        </li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a class="btn" href="signin.html">SIGN IN / SIGN UP</a></li>
-      </ul>
-    </div><!--/.nav-collapse -->
   </div>
 </div>
 <!-- /.navbar -->
@@ -31,17 +18,16 @@
     <div class="row">
       <h1 class="lead">UNE ALTERNATIVE A L'EHPAD</h1>
       <h2>
-        <p>
+
           <a class="btn btn-default btn-lg" role="button">PLUS D'INFORMATIONS</a>
           <a class="btn btn-default btn-lg" role="button" routerLink="simulator">SIMULATEUR</a>
-          <a class="btn btn-default btn-lg" role="button">TEL</a>
-          <a class="btn btn-default btn-lg" role="button" routerLink="admin">
-            <span *ngIf="kcService.kc.authenticated">
-              {{kcService.kc.tokenParsed.name}}
-            </span>
-            ADMIN</a>
-        </p>
-      </h2>
+          <a class="btn btn-default btn-lg" role="button" routerLink="admin" *ngIf="this.isAuth">
+            {{userInformations.name}} </a>
+          <a class="btn btn-default btn-lg" (click)="ManagedAccount()" *ngIf="this.isAuth">Modif Compte</a>
+
+
+
+         </h2>
     </div>
   </div>
 </header>

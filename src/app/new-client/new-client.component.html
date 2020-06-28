@@ -12,7 +12,7 @@
     </div>
 
 
-    <kendo-calendar [(value)]="birthdate" [min]="min" [max]="max"></kendo-calendar>
+
 
     <div class="form-group">
       <label for="prenom">Telephone</label>
@@ -61,16 +61,6 @@
 
     <div *ngIf="selectedFile" class="img-preview-container">
 
-      <div class="img-preview{{selectedFile.status === 'fail' ? '-error' : ''}}"
-           [ngStyle]="{'background-image': 'url('+ selectedFile.src + ')'}">
-      </div>
-
-      <div *ngIf="selectedFile.pending" class="img-loading-overlay">
-        <div class="img-spinning-circle"></div>
-      </div>
-
-      <div *ngIf="selectedFile.status === 'ok'" class="alert alert-success"> Image Uploaded Succesfuly!</div>
-      <div *ngIf="selectedFile.status === 'fail'" class="alert alert-danger"> Image Upload Failed!</div>
     </div>
 
 
@@ -78,4 +68,5 @@
 
 
   </form>
+
 </div>

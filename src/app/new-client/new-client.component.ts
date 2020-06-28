@@ -13,6 +13,7 @@ class ImageSnippet {
 })
 export class NewClientComponent implements OnInit {
 
+
   cafs = ['CAF1', 'CAF2' , 'CAF3'];
   birthdate:Date = new Date();
   min: Date = new Date(1930, 1, 1)

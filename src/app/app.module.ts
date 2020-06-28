@@ -15,6 +15,9 @@ import { HomeComponent } from './home/home.component';
 import { ImageUploadComponent } from './image-upload/image-upload.component';
 import {KeycloakSecurityService} from "./security/keycloak-security.service";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {ButtonModule} from "primeng";
+import { GestionComponent } from './gestion/gestion.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -29,13 +32,13 @@ export function kcFactory(kcSecurity:KeycloakSecurityService) {
 @NgModule({
   declarations: [
     AppComponent,
-    AdminComponent,
     NewClientComponent,
     NewIntervenantComponent,
     NewEmployeeComponent,
     SimulatorComponent,
     HomeComponent,
-    ImageUploadComponent
+    ImageUploadComponent,
+    GestionComponent
   ],
   imports: [
     HttpClientModule,
@@ -44,6 +47,8 @@ export function kcFactory(kcSecurity:KeycloakSecurityService) {
     RouterModule,
     DateInputsModule,
     BrowserAnimationsModule,
+    ButtonModule,
+    ReactiveFormsModule,
   ],
   exports:[RouterModule],
   providers: [
