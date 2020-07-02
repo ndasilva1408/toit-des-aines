@@ -17,7 +17,8 @@ import {KeycloakSecurityService} from "./security/keycloak-security.service";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {ButtonModule} from "primeng";
 import { GestionComponent } from './gestion/gestion.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {RequestInterceptorService} from "./services/request-interceptor.service";
 
 
 
@@ -40,19 +41,21 @@ export function kcFactory(kcSecurity:KeycloakSecurityService) {
     ImageUploadComponent,
     GestionComponent
   ],
-  imports: [
-    HttpClientModule,
-    BrowserModule,
-    AppRoutingModule,
-    RouterModule,
-    DateInputsModule,
-    BrowserAnimationsModule,
-    ButtonModule,
-    ReactiveFormsModule,
-  ],
+    imports: [
+        HttpClientModule,
+        BrowserModule,
+        AppRoutingModule,
+        RouterModule,
+        DateInputsModule,
+        BrowserAnimationsModule,
+        ButtonModule,
+        ReactiveFormsModule,
+        FormsModule,
+    ],
   exports:[RouterModule],
   providers: [
     {provide:APP_INITIALIZER, deps:[KeycloakSecurityService],useFactory:kcFactory , multi:true},
+    {provide:HTTP_INTERCEPTORS, useClass:RequestInterceptorService, multi:true}
   ],
   bootstrap: [AppComponent]
 })

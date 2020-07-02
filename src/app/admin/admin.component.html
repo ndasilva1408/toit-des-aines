@@ -1,10 +1,34 @@
 
-<div class="flex-wrap">
+<div class="d-flex flex-row bd-highlight mb-3">
+  <div class="p-2 bd-highlight">
 <div class="calendar card-body align-content-center" >
   <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=2&amp;bgcolor=%23EF6C00&amp;ctz=Europe%2FParis&amp;src=cDYxcWxkamV2NDBqaHFldHNoZDFuYmV1aGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23009688&amp;showDate=1&amp;showNav=1&amp;showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=1"
           style="border:solid 1px #777" width="900" height="600" frameborder="0" scrolling="no"></iframe>
 </div>
-
+  </div>
+  <div class="p-2 bd-highlight">
+    <div class="row">
+      <div class="col-12" *ngFor="let book of books" >
+        <div class="card container-fluid" style="max-width: 680px; border-width: 0" *ngIf="books.length > 0">
+          <br>
+          <div class="row no-gutters">
+            <div class="col-4">
+              <img src="{{this.book.urlimg}}" class="container-fluid" >
+            </div>
+            <div class="col-8">
+              <div class="card-body text-justify">
+                <h4 class="card-title"><a href="javascript:void(0)" (click)="viewBook(this.book.id)">{{book.titre}}</a></h4>
+                <p class="card-text"><strong>de {{book.auteur}}</strong></p>
+                <p class="card-text"><strong>Editeur:</strong> {{book.edition}}</p>
+                <p class="card-text"><strong>Edité en:</strong> {{book.anneeParution }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
 <a class="btn btn-default btn-lg" role="button" routerLink="new-client">Ajouter un client</a>
 <a class="btn btn-default btn-lg" role="button">Ajouter un employé</a>
 <a class="btn btn-default btn-lg" role="button">Liste Caf</a>
