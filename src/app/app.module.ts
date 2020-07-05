@@ -19,6 +19,7 @@ import {ButtonModule} from "primeng";
 import { GestionComponent } from './gestion/gestion.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {RequestInterceptorService} from "./services/request-interceptor.service";
+import { PageemployeeComponent } from './pageemployee/pageemployee.component';
 
 
 
@@ -39,7 +40,8 @@ export function kcFactory(kcSecurity:KeycloakSecurityService) {
     SimulatorComponent,
     HomeComponent,
     ImageUploadComponent,
-    GestionComponent
+    GestionComponent,
+    PageemployeeComponent
   ],
     imports: [
         HttpClientModule,

@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <!--
 <div class="container">
   <div class="row">
@@ -78,27 +80,42 @@
   </div>
 </div>-->
 
-
-<div class="container">
+<div class="container text-center">
 
   <h1>Simulateur</h1>
+  <br>
+  <br>
+
+
+
   <form (ngSubmit)="calcul()" #heroForm="ngForm">
     <div class="form-group">
-      <label>Situation</label>
-      <input type="radio" class="form-control"
-             [(ngModel)]="model.alone" name="isAlone" [value]=true> Celibataire<br>
-      <input type="radio" class="form-control"
-             [(ngModel)]="model.alone" name="isAlone"  [value]=false >Couple
+      <h2>Situation</h2>
+      <label class="btn btn-cyan btn-rounded active form-check-label">
+        <input class="form-check-label" type="radio" checked autocomplete="off"
+               [(ngModel)]="model.alone" name="isAlone" [value]=true> Celibataire
+        <i class="fa fa-user"></i>
+      </label>
+
+      <label class="btn btn-cyan btn-rounded form-check-label">
+        <input class="form-check-label" type="radio" autocomplete="off"
+               [(ngModel)]="model.alone" name="isAlone" [value]=false> Couple
+        <i class="fa fa-user"></i>  <i class="fa fa-user"></i>
+      </label>
+
+
     </div>
 
+    <div class="container text-center">
+
     <div class="form-group">
-      <label for="revenus">Revenus</label>
+      <label for="revenus"><h2> Revenus</h2></label>
       <input type="number" class="form-control" id="revenus"
              [(ngModel)]="model.revenus" name="revenus">
     </div>
 
     <div class="form-group">
-      <label for="power">GIR</label>
+      <label for="power"><h2>GIR</h2></label>
       <select class="form-control" id="power"
               required
               [(ngModel)]="model.gir" name="power"
@@ -109,25 +126,26 @@
         Un GIR est nécessaire pour la simulation.
       </div>
     </div>
+    </div>
 
     <button type="submit" [hidden]="submitted" class="btn btn-success" [disabled]="!heroForm.form.valid">Simulation</button>
   </form>
 </div>
-<div class="container">
+<div class="container text-center">
 <div class="card">
 <div class="card-header " [hidden]="!submitted">
   <h1>Votre estimation : </h1>
   <div class="card-body">
-    <div >Aide de l'Etat</div>
+    <div> <h2>Aide de l'Etat</h2></div>
     <div >{{ model.plafondGIR}}</div>
   </div>
   <div class="card-body">
-    <div >Estimation participation aux vues de vos revenus : </div>
+    <div > <h2>Estimation participation aux vues de vos revenus : </h2></div>
     <div >{{ model.estimation }}</div>
   </div>
   <div class="card-body">
-    <div >Aide : </div>
-    <div >{{(model.plafondGIR)-(model.estimation)}} </div>
+    <div ><h2>Aide : </h2></div>
+    <div >{{aide}} </div>
   </div>
   <br>
 </div>

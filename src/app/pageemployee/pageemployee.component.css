@@ -1,0 +1,22 @@
+.calendarptit
+{
+  display:none;
+}
+
+@media all and (max-width: 768px) {
+  .calendar
+  {
+    display: none;
+  }
+  .clientphoto
+  {
+    display: none;
+  }
+
+}
+
+
+
+
+
+

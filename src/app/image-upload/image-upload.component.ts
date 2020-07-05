@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ImageService} from "../services/image.service";
+import {ImageUpdloadService} from "../services/image-updload.service";
 
 
 class ImageSnippet {
@@ -54,4 +55,32 @@ export class ImageUploadComponent implements OnInit {
 
     reader.readAsDataURL(file);
   }
+
+  imageBlobUrl: string | ArrayBuffer;
+  ablobService: ImageUpdloadService;
+  getThumbnail() : void {
+
+    this.ablobService.getBlobThumbnail()
+      .subscribe(
+        (val) => {
+          this.createImageFromBlob(val);
+        },
+        response => {
+          console.log("POST in error", response);
+        },
+        () => {
+          console.log("POST observable is now completed.");
+        });
+  }
+  createImageFromBlob(image: Blob) {
+    let reader = new FileReader();
+    reader.addEventListener("load", () => {
+      this.imageBlobUrl = reader.result;
+    }, false);
+    if (image) {
+      reader.readAsDataURL(image);
+    }
+  }
+
+
 }

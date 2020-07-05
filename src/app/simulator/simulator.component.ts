@@ -11,6 +11,7 @@ import {Simapa} from "../model/simapa/simapa";
 export class SimulatorComponent implements OnInit {
   forms: FormGroup;
   model:Simapa;
+  aide:number;
   submitted=false;
   girs= [
     '1','2','3','4','5','6'
@@ -49,6 +50,7 @@ export class SimulatorComponent implements OnInit {
           console.log('response',response);
           this.submitted=true;
           this.model = response;
+          this.aide=Math.round(response.plafondGIR-response.estimation);
         },
         err => {
           console.log('Error: ', err.error.message);

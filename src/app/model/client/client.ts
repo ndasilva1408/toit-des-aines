@@ -9,6 +9,7 @@ export class Client {
     public photo?: String;
     public telephone?: string ;
     public referent?: string ;
+  public referent_tel?: number ;
     public caf?: string;
     public secuSociale?: string;
     public departement?: string;

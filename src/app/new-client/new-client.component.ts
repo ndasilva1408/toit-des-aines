@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Client} from "../model/client/client";
 import {ImageService} from "../services/image.service";
+import {KeycloakSecurityService} from "../security/keycloak-security.service";
 
 class ImageSnippet {
   constructor(public src: string, public file: File) {}
@@ -20,10 +21,18 @@ export class NewClientComponent implements OnInit {
   max: Date = new Date(1980,12,31)
   selectedFile: ImageSnippet;
   private imageService: ImageService;
+  securityService: KeycloakSecurityService;
 
-  constructor() { }
+  constructor(public kcService:KeycloakSecurityService) {
+  }
+  isAuth2 = false;
+  keycloak:any;
+  userInformations:any;
 
   ngOnInit() {
+    this.keycloak=this.kcService.kc;
+    this.isAuth2=this.keycloak.authenticated;
+    this.userInformations = this.isAuth2 ? this.keycloak.idTokenParsed : {};
   }
   processFile(imageInput: any) {
     const file: File = imageInput.files[0];
