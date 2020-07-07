@@ -1,1 +1,70 @@
-<p>new-intervenant works!</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="row">
+  <div class="container col-lg-4 col-md-4 col-sm-12 ">
+
+    <div class="card">
+      <div class="card-header" style="text-align: center"><h3>Ajouter un intervenant:</h3></div>
+    </div>
+    <br>
+    <br>
+
+
+    <form #f="ngForm" [formGroup]="forms" (ngSubmit)="createNewInter()">
+      <br>
+
+      <div class="container text-center">
+        <div class="form-group">
+          <label class="control-label"> Nom:</label>
+          <input class="form-control input-md"
+                 type="text"
+                 name="nom"
+                 formControlName="nom">
+        </div>
+
+
+        <div class="form-group">
+          <label  class="control-label"> Prenom</label>
+          <input  class="form-control"
+                  type="text"
+                  name="prenom"
+                  formControlName="prenom" >
+        </div>
+
+
+        <div class="form-group">
+          <label class="control-label">Téléphone</label>
+          <input class="form-control"
+                 required
+                 name="tel"
+                 formControlName="tel"
+                 type="text"/>
+
+        </div>
+        <div class="form-group">
+          <label class="control-label" >Adresse Mail</label>
+          <input class="form-control"
+                 required
+                 name="mail"
+                 formControlName="mail"
+                 type="email"/>
+
+        </div>
+        <div class="form-group">
+          <label class="control-label">Profession</label>
+          <input class="form-control" id="profession"
+                 required
+                 name="profession"
+                 formControlName="profession" type="text"/>
+
+        </div>
+
+        <button type="submit" class="btn btn-success">Créer</button>
+
+      </div>
+    </form>
+
+
+  </div>
+
+
+</div>

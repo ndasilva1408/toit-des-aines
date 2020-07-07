@@ -3,8 +3,8 @@
   <div class="container">
     <div class="navbar-header">
 
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"  *ngIf="!this.isAuth"><span class="icon-bar"><a class="nav-link" (click)="onLogin()">Login</a></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"  *ngIf="this.isAuth"><span class="icon-bar"><a class="nav-link" (click)="onLogout()">Logout</a></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <button type="button" class=" btn btn-success" data-toggle="collapse" data-target=".navbar-collapse"  *ngIf="!this.isAuth"><span class="icon-bar"><a class="nav-link" (click)="onLogin()">Login</a></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <button type="button" class="btn btn-danger" data-toggle="collapse" data-target=".navbar-collapse"  *ngIf="this.isAuth"><span class="icon-bar"><a class="nav-link" (click)="onLogout()">Logout</a></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
 
       <a class="navbar-brand" href="index.html" routerLink="home"><img src="../../assets/bankimg/LogoTDA.png" alt="Logo"></a>
     </div>

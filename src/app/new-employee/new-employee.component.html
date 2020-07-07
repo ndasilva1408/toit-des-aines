@@ -1,80 +1,93 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="row">
-<div class="container col-lg-6 col-md-6 col-sm-12 ">
+  <div class="container col-lg-4 col-md-4 col-sm-12 ">
 
-  <h1>Ajouter un employé</h1>
-  <br>
-  <br>
-
-
-
-  <form (ngSubmit)="save()" #heroForm="ngForm">
-    <div class="container text-center">
-    <div class="form-group">
-      <label for="nom"><h2> Nom</h2></label>
-      <input type="text" class="form-control" id="nom"
-             [(ngModel)]="model.nom" name="nom">
+    <div class="card">
+      <div class="card-header" style="text-align: center"><h3>Ajouter un employé :</h3></div>
     </div>
+    <br>
+    <br>
 
 
+    <form #f="ngForm" [formGroup]="forms" (ngSubmit)="save()">
+      <br>
 
-      <div class="form-group">
-        <label for="prenom"><h2> Prenom</h2></label>
-        <input type="text" class="form-control" id="prenom"
-               [(ngModel)]="model.prenom" name="prenom">
+      <div class="container text-center">
+        <div class="form-group">
+          <label class="control-label"> Nom:</label>
+          <input class="form-control input-md"
+                 type="text"
+                 name="nom"
+                 formControlName="nom">
+         <!--        [(ngModel)]="model.nom" > -->
+        </div>
+
+
+        <div class="form-group">
+          <label  class="control-label"> Prenom</label>
+          <input  class="form-control"
+                  type="text"
+                  name="prenom"
+                  formControlName="prenom" >
+          <!--        [(ngModel)]="model.prenom" > -->
       </div>
 
       <div class="form-group">
-        <label for="salaire"><h2>Salaire</h2></label>
-        <input class="form-control" id="salaire"
-                required
-                [(ngModel)]="model.salaire" name="salaire"
-                #power="ngModel" type="number"/>
-
-      </div>
-      <div class="form-group">
-        <label for="heure"><h2>Heure</h2></label>
-        <input class="form-control" id="heure"
+        <label class="control-label" >Salaire</label>
+        <input class="form-control"
                required
-               [(ngModel)]="model.heure" name="heure"
-               #power="ngModel" type="number"/>
+               name="salaire"
+               type="number" formControlName="salaire"/>
 
       </div>
       <div class="form-group">
-        <label for="tel"><h2>Téléphone</h2></label>
-        <input class="form-control" id="tel"
+        <label  class="control-label">Heure</label>
+        <input class="form-control input-md"
+               type="number"
+               name="heure"
+               formControlName="heure"
+               required />
+           <!--    [(ngModel)]="model.heure" -->
+
+
+      </div>
+      <div class="form-group">
+        <label class="control-label">Téléphone</label>
+        <input class="form-control"
                required
-               [(ngModel)]="model.tel" name="tel"
-               #power="ngModel" type="text"/>
+               name="tel"
+               formControlName="tel"
+               type="text"/>
 
       </div>
       <div class="form-group">
-        <label for="mail"><h2>Adresse Mail</h2></label>
-        <input class="form-control" id="mail"
+        <label class="control-label" >Adresse Mail</label>
+        <input class="form-control"
                required
-               [(ngModel)]="model.mail" name="mail"
-               #power="ngModel" type="email"/>
+               name="mail"
+               formControlName="mail"
+               type="email"/>
 
       </div>
       <div class="form-group">
-        <label for="profession"><h2>Profession</h2></label>
+        <label class="control-label">Profession</label>
         <input class="form-control" id="profession"
                required
-               [(ngModel)]="model.profession" name="profession"
-               #power="ngModel" type="text"/>
+               name="profession"
+               formControlName="profession" type="text"/>
 
       </div>
       <div class="form-group">
         <h2>Droit à l'image</h2>
         <label class="btn btn-cyan btn-rounded active form-check-label">
           <input class="form-check-label" type="radio" checked autocomplete="off"
-                 [(ngModel)]="model.droitimg" name="droitimg" [value]=true> Oui
+                formControlName="droitimg" name="droitimg" [value]=true> Oui
           <i class="fa fa-check"></i>
         </label>
 
         <label class="btn btn-cyan btn-rounded form-check-label">
           <input class="form-check-label" type="radio" autocomplete="off"
-                 [(ngModel)]="model.droitimg" name="droitimg" [value]=false> Non
+                formControlName="droitimg" name="droitimg" [value]=false> Non
           <i class="fa fa-times"></i>
         </label>
 
@@ -82,13 +95,15 @@
       </div>
 
 
-    <button type="submit"  class="btn btn-success" [disabled]="!heroForm.form.valid">Créer</button>
+      <button type="submit" class="btn btn-success">Créer</button>
+
     </div>
   </form>
+
+
 </div>
-  <div class="col-6">
-    Liste employés
-  </div>
+
+
 </div>
 
 

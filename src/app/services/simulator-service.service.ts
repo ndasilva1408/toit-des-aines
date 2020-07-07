@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-import {Form, FormGroup} from "@angular/forms";
 import {HttpClient, HttpParams} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Simapa} from "../model/simapa/simapa";

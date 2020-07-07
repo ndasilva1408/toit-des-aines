@@ -7,6 +7,10 @@ import {GestionComponent} from "./gestion/gestion.component";
 import {PageemployeeComponent} from "./pageemployee/pageemployee.component";
 import {NewIntervenantComponent} from "./new-intervenant/new-intervenant.component";
 import {NewEmployeeComponent} from "./new-employee/new-employee.component";
+import {EmplistComponent} from "./emplist/emplist.component";
+import {SecuriteComponent} from "./securite/securite.component";
+import {SolidariteComponent} from "./solidarite/solidarite.component";
+import {AccompagnementsComponent} from "./accompagnements/accompagnements.component";
 
 
 const routes: Routes = [
@@ -15,7 +19,12 @@ const routes: Routes = [
   {path: 'home' , component: HomeComponent},
   {path: 'home/simulator' , component: SimulatorComponent},
   {path: 'admin/new-intervenant', component: NewIntervenantComponent},
-  {path: 'admin/new-employee', component: NewEmployeeComponent}
+  {path: 'admin/employees/new-employee', component: NewEmployeeComponent},
+  {path: 'admin/employees', component: EmplistComponent},
+  {path: 'home/securite', component: SecuriteComponent},
+  {path: 'home/solidarite', component: SolidariteComponent},
+  {path: 'home/accompagnement', component: AccompagnementsComponent},
+
 ];
 
 @NgModule({

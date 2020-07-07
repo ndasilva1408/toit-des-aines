@@ -1,10 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
 import {APP_INITIALIZER, NgModule} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {RouterModule, Routes} from "@angular/router";
-import { AdminComponent } from './admin/admin.component';
 import { NewClientComponent } from './new-client/new-client.component';
 import { NewIntervenantComponent } from './new-intervenant/new-intervenant.component';
 import { NewEmployeeComponent } from './new-employee/new-employee.component';
@@ -14,12 +12,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { ImageUploadComponent } from './image-upload/image-upload.component';
 import {KeycloakSecurityService} from "./security/keycloak-security.service";
-import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {ButtonModule} from "primeng";
 import { GestionComponent } from './gestion/gestion.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {RequestInterceptorService} from "./services/request-interceptor.service";
 import { PageemployeeComponent } from './pageemployee/pageemployee.component';
+import { EmplistComponent } from './emplist/emplist.component';
+import { SecuriteComponent } from './securite/securite.component';
+import { SolidariteComponent } from './solidarite/solidarite.component';
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {BrowserModule} from "@angular/platform-browser";
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import { AccompagnementsComponent } from './accompagnements/accompagnements.component';
 
 
 
@@ -41,19 +45,24 @@ export function kcFactory(kcSecurity:KeycloakSecurityService) {
     HomeComponent,
     ImageUploadComponent,
     GestionComponent,
-    PageemployeeComponent
+    PageemployeeComponent,
+    EmplistComponent,
+    SecuriteComponent,
+    SolidariteComponent,
+    AccompagnementsComponent
   ],
-    imports: [
-        HttpClientModule,
-        BrowserModule,
-        AppRoutingModule,
-        RouterModule,
-        DateInputsModule,
-        BrowserAnimationsModule,
-        ButtonModule,
-        ReactiveFormsModule,
-        FormsModule,
-    ],
+  imports: [
+    HttpClientModule,
+    BrowserModule,
+    AppRoutingModule,
+    RouterModule,
+    DateInputsModule,
+    BrowserAnimationsModule,
+    ButtonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    NgbModule,
+  ],
   exports:[RouterModule],
   providers: [
     {provide:APP_INITIALIZER, deps:[KeycloakSecurityService],useFactory:kcFactory , multi:true},

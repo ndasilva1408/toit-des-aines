@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="row">
+  <div class="col-lg-4 col-md-4 col-sm-8">
+  <div *ngFor="let employee of employees">
+    <div class="card ">
+      <br>
+
+
+      <div class="card-body text-justify">
+        <p class="card-text"><strong>Nom : {{employee.nom}}</strong></p>
+        <p class="card-text"><strong>Prenom :</strong> {{employee.prenom}}</p>
+        <p class="card-text"><strong>Heure :</strong> {{employee.heure}}</p>
+      </div>
+
+      <br>
+
+    </div>
+  </div>
+  </div>
+
+  <div class="col-lg4 col-md-4 col-sm-2">
+    <br>
+
+    <a class="btn-lg btn-dark" role="button" routerLink="new-employee">Ajouter un employé</a>
+  </div>
+
+</div>
+
