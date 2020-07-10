@@ -38,30 +38,6 @@
         <option *ngFor="let caf of cafs" [value]="caf">{{caf}}</option>
       </select>
     </div>
-    <div class="form-group">
-      <label>Droit a l'image: </label>
-      <div class="form-group">
-      <label class="firstLabel">
-        <input type="radio" name="droitImg" formControlName="payedOvertime" [value]="true" />Oui
-      </label>
-      <label >
-        <input type="radio" name="droitImg" formControlName="payedOvertime" [value]="false" />Non
-      </label>
-      </div>
-    </div>
-
-    <label class="image-upload-container btn btn-bwm">
-      <span>Select Image</span>
-      <input #imageInput
-             type="file"
-             accept="image/*"
-             (change)="processFile(imageInput)">
-    </label>
-
-
-    <div *ngIf="selectedFile" class="img-preview-container">
-
-    </div>
 
 
     <button type="submit" class="btn btn-success">Créer</button>

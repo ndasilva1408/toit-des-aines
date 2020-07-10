@@ -32,6 +32,7 @@
     "@progress/kendo-theme-default": "latest",
     "bootstrap": "^4.5.0",
     "chart.js": "^2.9.3",
+    "jw-angular-pagination": "^1.2.0",
     "keycloak-js": "^10.0.2",
     "primeicons": "^4.0.0",
     "primeng": "^9.1.0",
