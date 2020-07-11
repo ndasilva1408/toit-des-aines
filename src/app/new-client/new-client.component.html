@@ -1,43 +1,56 @@
 <div class="container " *ngIf="this.isAuth2" >
   <h1>Nouveau Client</h1>
-  <form>
+  <form [formGroup]="forms" (ngSubmit)="submit()">
+
     <div class="form-group">
-      <label for="nom">Nom</label>
-      <input type="text" class="form-control" id="nom" required>
+      <label class="control-label">Nom</label>
+      <input type="text"
+             class="form-control input-md"
+             name="nom"
+             formControlName="nom">
     </div>
 
     <div class="form-group">
-      <label for="prenom">Prenom</label>
-      <input type="text" class="form-control" id="prenom">
-    </div>
-
-
-
-
-    <div class="form-group">
-      <label for="prenom">Telephone</label>
-      <input type="tel" class="form-control" id="telephone">
+      <label class="control-label">Prenom</label>
+      <input type="text"
+             class="form-control input-md"
+             name="prenom"
+             formControlName="prenom">
     </div>
 
     <div class="form-group">
-      <label for="referent">Referent</label>
-      <input type="text" class="form-control" id="referent">
-    </div>
-    <div class="form-group">
-      <label for="referent_tel">Numéro de Téléphone Referent</label>
-      <input type="text" class="form-control" id="referent_tel">
-    </div>
-    <div class="form-group">
-      <label for="maison_id">Maison</label>
-      <input type="text" class="form-control" id="maison_id">
+      <label class="control-label">Telephone</label>
+      <input type="tel"
+             class="form-control input-md"
+             name="telephone"
+             formControlName="telephone">
     </div>
 
     <div class="form-group">
-      <label for="caf">CAF</label>
-      <select class="form-control" id="caf" required>
-        <option *ngFor="let caf of cafs" [value]="caf">{{caf}}</option>
+      <label class="control-label">Referent (Format : (Nom/Prenom) + (Lien Client) )  </label>
+      <input type="text"
+             class="form-control input-md"
+             name="referent"
+             formControlName="referent">
+    </div>
+    <div class="form-group">
+      <label class="control-label">Numéro de Téléphone du réferent</label>
+      <input type="tel"
+             class="form-control input-md"
+             name="referent_tel"
+             formControlName="referent_tel">
+    </div>
+
+    <div class="form-group">
+      <label class="control-label">Medecin Traitant</label>
+      <select class="form-control"
+              name="medecinTraitant"
+              formControlName="medecinTraitant" required >
+        <option *ngFor="let medecin of medecins; let i = index"
+                [ngValue]="medecins[i].id" >{{medecin.nom}}</option>
       </select>
     </div>
+
 
 
     <button type="submit" class="btn btn-success">Créer</button>

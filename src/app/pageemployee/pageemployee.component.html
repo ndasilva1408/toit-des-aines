@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+
 <meta name="viewport" content="initial-scale=1.0, user-scalable=yes" />
 <body>
 <div class="text-danger container text-center container-xl" *ngIf="errorMessage">
@@ -17,35 +21,6 @@
       </div>
     </div>
 
-  <!--  <div class="clients col-7">
-
-
-        <div *ngFor="let client of clients" >
-          <div class="card profile-card-3">
-          <div class="card container-fluid" style="max-width: 680px; border-width: 0" >
-            <br>
-            <div class="row col-12" >
-              <div class="clientphoto col-6 ">
-                <img src="{{this.client.photo}}"  class="container-fluid" >
-              </div>
-              <div class="clientphoto col-2 " *ngIf="this.client.photo == null">
-                <img src="../../assets/bankimg/default_avatar.jpg"  class="container-fluid" >
-              </div>
-              <div class="clientinfo  ">
-                <div class="card-body text-justify">
-                  <p class="card-text"><strong>Nom : {{client.nom}}</strong></p>
-                  <p class="card-text"><strong>Prenom :</strong> {{client.prenom}}</p>
-                  <p class="card-text"><strong>Personne a contacté en cas d'urgence + Lien avec le client</strong> {{client.referent}}</p>
-                  <p class="card-text"><strong>Tel:</strong> {{client.referent_tel}}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          </div>
-          <br>
-        </div>
-    </div>-->
 
     <div class="col-md-4">
       <div *ngFor="let client of clients" >
@@ -60,7 +35,9 @@
           <h2>{{client.nom}} {{client.prenom}}<small>Personne à contacter : {{client.referent}}
            <b> [{{client.referent_tel}}]</b></small></h2>
         </div>
-      </div>
+
+        <button class="btn btn-danger btn-mini align-content-center" (click)="deleteIt(client.id)"  ><i class="icon-remove"></i></button>
+
       </div>
     </div>
 
@@ -77,6 +54,7 @@
   <a class="btn btn-link" role="button" routerLink="new-client">Ajouter un client</a>
   <a class="btn btn-link" role="button" routerLink="employees">Listes Employés</a>
   <a class="btn btn-link" role="button" routerLink="new-intervenant">Nouvel intervenant</a>
+</div>
 </div>
 </div>
 </div>

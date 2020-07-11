@@ -39,4 +39,13 @@ export class PageemployeeComponent implements OnInit {
     );
   }
 
+   deleteIt(id:number) {
+    this.clientService.deleteClient(id).subscribe(
+      data => {
+      }),
+      err=>{
+        console.log('error', err.error.message)
+      };
+  }
+
 }
