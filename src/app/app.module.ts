@@ -24,6 +24,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {BrowserModule} from "@angular/platform-browser";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import { AccompagnementsComponent } from './accompagnements/accompagnements.component';
+import { NewMedecinTraitantComponent } from './new-medecin-traitant/new-medecin-traitant.component';
 
 
 
@@ -49,7 +50,8 @@ export function kcFactory(kcSecurity:KeycloakSecurityService) {
     EmplistComponent,
     SecuriteComponent,
     SolidariteComponent,
-    AccompagnementsComponent
+    AccompagnementsComponent,
+    NewMedecinTraitantComponent
   ],
   imports: [
     HttpClientModule,

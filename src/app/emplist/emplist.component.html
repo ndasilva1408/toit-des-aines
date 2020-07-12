@@ -1,4 +1,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
 
 <div class="row">
   <div class="col-lg-4 col-md-4 col-sm-8">
@@ -13,6 +15,7 @@
           <li class="list-group-item list-group-item-success"><i class="fa fa-user"style="font-size:20px;"></i>   Profession : {{employee.profession}}</li>
           <li class="list-group-item list-group-item-success"><i class="fa fa-clock-o"style="font-size:20px;"></i>  Heure : {{employee.heure}}</li>
           <li class="list-group-item list-group-item-success"><i class="fa fa-money"style="font-size:20px;"></i>   Salaire : {{employee.salaire}}</li>
+          <button class="btn btn-danger btn-mini align-content-center" (click)="deleteIt(employee.id)"  ><i class="icon-remove"></i></button>
         </ul>
 
       </div>

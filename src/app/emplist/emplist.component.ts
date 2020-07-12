@@ -25,7 +25,17 @@ export class EmplistComponent implements OnInit {
         console.log('emp :',data)
       }, error => {
         console.log('error: ', error.error.message)
-      }
-    );
+      });}
 
-}}
+  deleteIt(id:number) {
+    this.empService.deleteEmployee(id).subscribe(
+      data => {
+      }),
+      err=>{
+        console.log('error', err.error.message)
+      };
+    window.location.reload();
+  }
+
+
+}

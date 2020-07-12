@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Employee} from "../model/employee/employee";
 import {EmployeeService} from "../services/employee.service";
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-new-employee',
@@ -17,7 +18,8 @@ export class NewEmployeeComponent implements OnInit {
 
 
   constructor( private empService: EmployeeService,
-               private formBuilder: FormBuilder) { }
+               private formBuilder: FormBuilder,
+               public router: Router) { }
 
 
 
@@ -66,6 +68,7 @@ export class NewEmployeeComponent implements OnInit {
         error => {
           console.log('Error: ', error.error);
         });
+    this.router.navigateByUrl('/admin/employees')
   };
 
 }

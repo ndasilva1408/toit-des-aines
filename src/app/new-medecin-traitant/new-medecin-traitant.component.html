@@ -1,0 +1,77 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+<div class="row">
+  <div class="container col-lg-4 col-md-4 col-sm-12 ">
+
+    <div class="card">
+      <div class="card-header"><h3>Ajouter un Medecin Traitant:</h3></div>
+    </div>
+    <br>
+    <br>
+
+
+    <form #f="ngForm" [formGroup]="forms" (ngSubmit)="createNewMedecin()">
+      <br>
+
+      <div class="container">
+        <div>
+          <label class="container"> Nom:</label>
+          <input class="card-body"
+                 type="text"
+                 name="nom"
+                 formControlName="nom">
+        </div>
+
+        <div class="form-group">
+          <label  class="container"> Prenom:</label>
+          <input  class="card-body"
+                  type="text"
+                  name="prenom"
+                  formControlName="prenom" >
+        </div>
+
+        <div class="form-group">
+          <label class="container"> Téléphone:</label>
+          <input class="card-body"
+                 required
+                 name="tel"
+                 formControlName="tel"
+                 type="text"/>
+
+        </div>
+
+        <button type="submit" class="btn btn-success">Créer</button>
+
+      </div>
+    </form>
+
+
+  </div>
+
+  <table class="table table-responsive">
+    <table class="table table-hover table-condensed table-striped">
+      <thead class="borrow">
+      <tr>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Tel</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let medecin of medecins">
+        <td>{{medecin.nom}}</td>
+        <td>{{medecin.prenom}}</td>
+        <td>{{medecin.tel}}</td>
+        <td>
+          <button class="btn btn-danger btn-mini align-content-center"
+                  (click)="deleteMed(medecin.id)"  >
+            <i class="icon-remove"></i></button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </table>
+
+
+</div>

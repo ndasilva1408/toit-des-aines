@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {IntervenantService} from "../services/intervenant.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-new-intervenant',
@@ -10,7 +11,8 @@ import {IntervenantService} from "../services/intervenant.service";
 export class NewIntervenantComponent implements OnInit {
   forms: FormGroup;
   constructor(private interService: IntervenantService,
-              private formBuilder: FormBuilder) { }
+              private formBuilder: FormBuilder,
+              public router:Router) { }
 
   ngOnInit() {
     this.initform();
@@ -28,7 +30,7 @@ export class NewIntervenantComponent implements OnInit {
   }
 
   createNewInter(){
-    console.log(this.forms.value)
+    console.log(this.forms.value);
 
     this.interService.saveEmp(this.forms)
       .subscribe(          response => {
@@ -37,5 +39,6 @@ export class NewIntervenantComponent implements OnInit {
         error => {
           console.log('Error: ', error.error);
         });
+    this.router.navigateByUrl('/admin')
   };
 }

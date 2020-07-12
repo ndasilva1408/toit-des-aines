@@ -22,6 +22,10 @@
 body{
   background-color: #efefef
 }
+h1 {
+  text-align: center;
+  color: red;
+}
 
 .profile-card-3 {
   font-family: 'Open Sans', Arial, sans-serif;

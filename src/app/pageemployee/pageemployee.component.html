@@ -23,6 +23,7 @@
 
 
     <div class="col-md-4">
+      <h1>CLIENTS:</h1>
       <div *ngFor="let client of clients" >
       <div class="card profile-card-3">
         <div class="background-block">
@@ -41,18 +42,43 @@
       </div>
     </div>
 
-
-
-
-
-
-
   </div>
+    <div class="col-md-4">
+      <h1>INTERVENANTS:</h1>
+      <table class="table table-responsive">
+        <table class="table table-hover table-condensed table-striped">
+          <thead class="borrow">
+          <tr>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Tel</th>
+            <th>Mail</th>
+            <th>Profession</th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let intervenant of inters">
+              <td>{{intervenant.nom}}</td>
+              <td>{{intervenant.prenom}}</td>
+              <td>{{intervenant.tel}}</td>
+              <td>{{intervenant.mail}}</td>
+              <td>{{intervenant.profession}}</td>
+              <td>
+                <button class="btn btn-danger btn-mini align-content-center"
+                        (click)="deleteInter(intervenant.id)"  >
+                  <i class="icon-remove"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </table>
+    </div>
 
 
 <div>
   <a class="btn btn-link" role="button" routerLink="new-client">Ajouter un client</a>
   <a class="btn btn-link" role="button" routerLink="employees">Listes Employés</a>
+  <a class="btn btn-link" role="button" routerLink="new-medecin">Nouveau Medecin traitant</a>
   <a class="btn btn-link" role="button" routerLink="new-intervenant">Nouvel intervenant</a>
 </div>
 </div>

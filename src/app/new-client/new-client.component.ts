@@ -6,6 +6,7 @@ import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {ClientService} from "../services/client.service";
 import {MedecinTraitant} from "../model/medecin/medecin-traitant";
 import {MedecinService} from "../services/medecin.service";
+import {Router} from "@angular/router";
 
 class ImageSnippet {
   constructor(public src: string, public file: File) {
@@ -29,7 +30,8 @@ export class NewClientComponent implements OnInit {
   constructor(public kcService: KeycloakSecurityService,
               private formBuilder: FormBuilder,
               public clientService: ClientService,
-              public medecinService: MedecinService) {
+              public medecinService: MedecinService,
+              public router: Router) {
   }
 
   isAuth2 = false;
@@ -69,6 +71,7 @@ export class NewClientComponent implements OnInit {
         error => {
           console.log('Error: ', error.error);
         });
+    this.router.navigateByUrl('/admin')
   };
 
   private initMedecins() {

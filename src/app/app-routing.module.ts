@@ -11,6 +11,7 @@ import {EmplistComponent} from "./emplist/emplist.component";
 import {SecuriteComponent} from "./securite/securite.component";
 import {SolidariteComponent} from "./solidarite/solidarite.component";
 import {AccompagnementsComponent} from "./accompagnements/accompagnements.component";
+import {NewMedecinTraitantComponent} from "./new-medecin-traitant/new-medecin-traitant.component";
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path: 'home/securite', component: SecuriteComponent},
   {path: 'home/solidarite', component: SolidariteComponent},
   {path: 'home/accompagnement', component: AccompagnementsComponent},
+  {path: 'admin/new-medecin' , component: NewMedecinTraitantComponent}
 
 ];
 
